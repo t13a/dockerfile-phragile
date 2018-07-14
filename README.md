@@ -29,7 +29,7 @@ TL;DR:
     -e PHRAGILE_BOT_API_TOKEN=api-xxxxxxxxxxxxxxxxxxxxxxxxxxxx \
     -e MANIPHEST_STORY_POINTS_FIELD=points \
     -e PHRAGILE_ADMINS=admin \
-    -v $(pwd):storage:/phragile/storage \
+    -v $(pwd)/storage:/phragile/storage \
     -p 80:80 \
     --link your.phabricator.host \
     --link phragile-mysql \
