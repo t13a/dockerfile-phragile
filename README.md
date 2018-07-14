@@ -1,6 +1,6 @@
 # Phragile
 
-![screenshot.png]
+![Screenshot](screenshot.png)
 
 Dockerfile for [Phragile](https://github.com/wmde/phragile) a sprint overviews for [Phabricator](https://phacility.com/phabricator/) projects.
 
