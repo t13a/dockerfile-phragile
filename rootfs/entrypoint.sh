@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+if [ -n "${TIMEZONE:-}" ]
+then
+    ln -sf "/usr/share/zoneinfo/${TIMEZONE}" /etc/localtime
+fi
+
 if [ -z "${NO_MIGRATE:-}" ]
 then
     (
@@ -29,7 +34,7 @@ fi
 
 if [ -n "${SNAPSHOTS_CREATE_SCHEDULE:-}" ]
 then
-    echo "${SNAPSHOTS_CREATE_SCHEDULE} php /phragile/artisan snapshots:create" > /cron/www-data
+    echo "${SNAPSHOTS_CREATE_SCHEDULE} php /phragile/artisan snapshots:create" > /cron/root
 fi
 
 exec "${@}"

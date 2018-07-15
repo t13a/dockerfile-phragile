@@ -9,7 +9,7 @@ RUN git clone -b ${PHRAGILE_BRANCH} ${PHRAGILE_REPOSITORY} /phragile && \
 
 FROM php:7.0-fpm-alpine
 
-RUN apk --no-cache add libmcrypt-dev nginx s6 && \
+RUN apk --no-cache add libmcrypt-dev nginx s6 tzdata && \
     docker-php-ext-install mcrypt pdo_mysql
 
 COPY --from=builder /phragile /phragile
