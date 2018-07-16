@@ -7,8 +7,9 @@ then
     cp -f "/usr/share/zoneinfo/${APP_TIMEZONE}" /etc/localtime
     echo "${APP_TIMEZONE}" > /etc/timezone
 
-    sed -ir /phragile/config/app.php \
-    "s/^(\\s*'timezone'\\s*=>\\s*)'UTC'(\\s*,)/\\1env('APP_TIMEZONE', 'UTC')\\2/g"
+    sed -ri \
+    "s/^(\\s*'timezone'\\s*=>\\s*)'UTC'(\\s*,)/\\1env('APP_TIMEZONE', 'UTC')\\2/g" \
+    /phragile/config/app.php
 fi
 
 if [ -z "${NO_MIGRATE:-}" ]
