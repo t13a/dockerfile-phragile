@@ -1,2 +1,2 @@
 #!/bin/sh
-exec crond -f /cron
+exec crond -f
