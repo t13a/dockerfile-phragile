@@ -2,13 +2,13 @@
 
 set -euo pipefail
 
-if [ -n "${TIMEZONE:-}" ]
+if [ -n "${APP_TIMEZONE:-}" ]
 then
-    cp -f "/usr/share/zoneinfo/${TIMEZONE}" /etc/localtime
-    echo "${TIMEZONE}" > /etc/timezone
+    cp -f "/usr/share/zoneinfo/${APP_TIMEZONE}" /etc/localtime
+    echo "${APP_TIMEZONE}" > /etc/timezone
 
     sed -irf /phragile/config/app.php \
-    "s/^(\\s*'timezone'\\s*=>\\s*)'UTC'(\\s*,)/\\1env('TIMEZONE', 'UTC')\\2/g"
+    "s/^(\\s*'timezone'\\s*=>\\s*)'UTC'(\\s*,)/\\1env('APP_TIMEZONE', 'UTC')\\2/g"
 fi
 
 if [ -z "${NO_MIGRATE:-}" ]
