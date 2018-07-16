@@ -42,4 +42,5 @@ Name | Description | Default | Example
 `NO_MIGRATE` | Do not migrate DB at start time. | N/A | `yes`
 `NO_PREPARE_STORAGE` | Do not touch `/phragile/storage` at start time. | N/A | `yes`
 `SNAPSHOTS_CREATE_SCHEDULE` | Periodically create all active sprint snapshots. | N/A | `0 0 * * *`
+`TIMEZONE` | Specify timezone | `UTC` | `Asia/Tokyo`
 
